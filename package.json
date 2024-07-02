@@ -2,6 +2,7 @@
   "name": "html-markup-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/",
   "dependencies": {
     "@babel/eslint-parser": "^7.24.7",
     "@testing-library/jest-dom": "^5.17.0",
