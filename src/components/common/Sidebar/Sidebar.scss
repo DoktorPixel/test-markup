@@ -1,0 +1,107 @@
+@import "../../../styles/variables";
+
+.sidebar_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  //   background: #06054a;
+  //   background: radial-gradient(circle, #2d1e88 0%, #482c98 100%), #06054a;
+
+  background: $radial-gradient;
+  padding: 30px 0 30px 0;
+
+  .logo_wrapper {
+    position: relative;
+    a {
+      padding-left: 30px;
+    }
+    .logo_mask {
+      color: $white;
+      font-size: 16px;
+      text-align: center;
+      position: absolute;
+      background-color: $purple;
+      width: 47px;
+      height: 20px;
+      top: 0px;
+      left: 220px;
+    }
+  }
+
+  .ellipse_background {
+    position: relative;
+  }
+  .ellipse_background::after {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 220px;
+    height: 420px;
+    background: url("/assets/images/Ellipse.svg") no-repeat;
+  }
+  .copyright {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.2px;
+    text-align: left;
+    span {
+      margin-left: 30px;
+      color: $white;
+      font-family: "IBM Plex Sans", sans-serif;
+    }
+  }
+}
+
+.menu_list {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+
+  .menu_list_item {
+    color: $white;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    .label-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 30px;
+    }
+    .label {
+      margin: 0 30px;
+      color: $white;
+      position: relative;
+      width: fit-content;
+    }
+
+    .label::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $white;
+      transition: width 0.3s ease;
+    }
+
+    .label:hover::after {
+      width: 100%;
+    }
+  }
+
+  .menu_list_item.active {
+    background-color: $active;
+    border-bottom: none;
+  }
+}
+.menu_list .menu_list_item:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 920px) {
+  .sidebar_wrapper {
+    display: none;
+  }
+}

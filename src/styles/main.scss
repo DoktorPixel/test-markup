@@ -1,0 +1,150 @@
+@import "fonts";
+@import "reset";
+@import "./variables";
+
+* {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $primary;
+}
+
+.main {
+  padding: 40px;
+}
+
+.product_page {
+  .heading {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  .cards_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    cursor: pointer;
+    .card_wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      width: 264px;
+      height: 332px;
+      border: 1px solid $border;
+      margin-right: -1px;
+      margin-bottom: -1px;
+
+      .card_icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      .card_info {
+        margin-top: 80px;
+
+        h3 {
+          font-size: 20px;
+          max-width: 170px;
+          .arrow_icon {
+            margin-left: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+        }
+        p {
+          max-width: 200px;
+          font-size: 16px;
+          color: $secondary;
+          font-family: "IBM Plex Sans", sans-serif;
+        }
+      }
+    }
+
+    .card_wrapper:hover {
+      border: 1px solid $border_hover;
+      transform: scale(1.01);
+      transition: 0.3s ease;
+      .card_info {
+        h3 {
+          .arrow_icon {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .specification {
+    color: $text_grey;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    margin-top: 40px;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 620px) {
+  .main {
+    padding: 10px;
+  }
+  .product_page {
+    .heading {
+      h1 {
+        font-size: 30px;
+      }
+    }
+    .cards_wrapper {
+      margin-top: 16px;
+      .card_wrapper {
+        padding: 20px;
+        width: 160px;
+        height: 220px;
+
+        .card_icon {
+          margin-top: 20px;
+          height: 60px;
+        }
+
+        .card_info {
+          margin-top: 30px;
+
+          h3 {
+            font-size: 16px;
+          }
+          p {
+            font-size: 13px;
+            color: $secondary;
+            font-family: "IBM Plex Sans", sans-serif;
+          }
+        }
+      }
+      .card_wrapper:hover {
+        border: 1px solid $border_hover;
+        transform: scale(1.01);
+        transition: 0.3s ease;
+      }
+    }
+    .specification {
+      color: $text_grey;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 16px;
+      margin-top: 40px;
+      max-width: 700px;
+    }
+  }
+  .product_page .cards_wrapper .card_wrapper:hover {
+    .card_info {
+      h3 {
+        .arrow_icon {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

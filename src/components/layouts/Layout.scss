@@ -1,0 +1,13 @@
+.layout_wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (max-width: 920px) {
+  .layout_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
